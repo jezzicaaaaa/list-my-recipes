@@ -1,0 +1,120 @@
+@import 'partials/setup';
+@import 'partials/variables';
+
+.home{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../assets/home-bg.jpg);
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+    .container{
+        padding-top: 13%; 
+        text-align: center;
+    }
+
+    h1{
+        font-family: $title-font;
+        color: white;
+        font-size: 150px;
+
+        span{
+            color: #992820;
+        }
+    }
+    h3{
+        @include semi-title;
+        color: #eee;
+        margin: 30px auto;
+    }
+    button{
+       border-radius: 5px; 
+       background: transparent;
+       border: 2px solid #eee;
+       width: 200px;
+       height: 70px;   
+       letter-spacing: 1px; 
+       font-family: $semi-title;
+       font-size: 28px;
+       color: white;
+       margin-top: 80px;
+
+    }
+    button:hover{
+        background-color: #992820;
+        border: #992820;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+    }
+}
+.search{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../assets/search-bg2.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: bottom;
+
+    .search-box{
+        margin: 200px auto;
+        padding: 25px 15px;
+        text-align: center;
+        background: white;
+        color: black;
+        width: 700px;
+        position: relative;
+    
+        h3{
+            font-family: $title-font;
+            font-size: 70px;
+            margin-bottom: 50px;
+        }
+        form{
+            width: 450px;
+            background: #262626;
+            padding: 40px;
+            position: absolute;
+            left: 18%;
+            top: 70%;
+            margin: auto;
+        }
+        .ingredients{
+            margin: auto;
+            margin-bottom: 20px;
+            margin-right: 18px;
+            display: inline-block;
+            background-color: #eee;
+            border: 0;
+        }
+        input[type="text"]{
+            width: 250px;
+            height: 45px;
+            font-family: $semi-title;
+            padding: 0 5px;
+            font-size: 16px;
+        }
+        i{
+            color: white;
+            font-size: 25px;
+            display: inline-block;
+        }
+        i:hover{
+            color: #992820;
+            cursor: pointer;
+        }
+        .submit{ 
+            background: #992820;
+            border: none;
+            width: 100px;
+            height: 40px;   
+            letter-spacing: 1px; 
+            font-family: $semi-title;
+            font-size: 18px;
+            color: white;
+            display: block;
+            margin: auto;
+            transition: .3s ease-in-out;
+        }
+        .submit:hover{
+            background-color: #7C201A;
+        }
+    }
+
+
+}
