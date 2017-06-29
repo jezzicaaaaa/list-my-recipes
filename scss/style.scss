@@ -115,6 +115,47 @@
             background-color: #7C201A;
         }
     }
-
-
+}
+.recipe-lists{
+    background-image: url(../assets/wall4.png);
+    .top-banner{
+        background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../assets/result-bg.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 220px;
+        text-align: center;
+        h3{
+            margin: auto;
+            margin-bottom: 0;
+            padding-top:20px;
+            font-family: $title-font;
+            color: white;
+            font-size: 120px;
+        }
+        p{
+            font-family: $semi-title;
+            color: white;
+            font-size: 22px;
+            margin-top: 0;
+        }
+    }
+    .results{
+         
+        .lists{
+            height: 300px;
+            padding: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+        img{
+            max-width: 90%;
+            max-height: 90%;
+            text-align: center;
+            cursor: pointer;
+        }
+      
+        h3{
+            @include semi-title;
+        }
+    }
 }

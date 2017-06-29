@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 $('.search').hide();
+$('.recipe-lists').hide();
 $('.btn-home').on("click" , function(){
     $('.home').hide();
     $('.search').fadeIn();
@@ -66,16 +67,18 @@ var recipes = [];
         for ( i= 0; i < recipeList.length; i++ ){
             var mylists = recipeList[i];  
 
-     //Make a template to append results to//
-    var template = `
-    <div class = "lists">
-    <h2> ${mylists.title}</h2>
-    <img src =" ${mylists.image_url} ">
-    </div> 
-    `;            
-    console.log(mylists);   
-    $('.results').append(template);
-    }
+        //Make a template to append results to//
+        var template = `
+        <div class = "lists row col-sm-6 col-lg-6 col-md-6">
+            <h3> ${mylists.title}</h3>
+            <a href = "${mylists.f2f_url}" target="_blank">
+                <img src =" ${mylists.image_url} ">
+            </a>
+        </div> 
+        `;            
+        console.log(mylists);   
+        $('.results').append(template);
         }
+    }
         
 });
