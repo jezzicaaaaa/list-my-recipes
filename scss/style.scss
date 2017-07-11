@@ -50,6 +50,16 @@
     height: 100vh;
     background-size: cover;
     background-position: bottom;
+    
+    #go-home{
+        margin-top: 50px;
+        font-size: 50px;
+        color: white;
+    }
+    #go-home:hover{
+        color: #cecece;
+        transition: .3s ease-in-out;
+    }
 
     .search-box{
         margin: 200px auto;
@@ -118,6 +128,17 @@
 }
 .recipe-lists{
     background-image: url(../assets/wall4.png);
+    #go-search{
+        position: absolute;
+        left:30px;
+        top: 50px;
+        font-size: 50px;
+        color: white;
+    }
+    #go-search:hover{
+        color: #cecece;
+        transition: .3s ease-in-out; 
+    }
     .top-banner{
         background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../assets/result-bg.jpg);
         background-size: cover;
@@ -146,16 +167,62 @@
             padding: 10px;
             overflow: hidden;
             text-align: center;
+            background: white;
         }
         img{
-            max-width: 90%;
+            max-width: 95%;
             max-height: 90%;
             text-align: center;
             cursor: pointer;
+        }
+        img:hover{
+            background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ); 
         }
       
         h3{
             @include semi-title;
         }
+        /* The Modal (background) */
+        
     }
 }
+.modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        li{
+            margin-bottom: 10px;
+            display: block;
+        }

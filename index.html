@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="home">
+    <section id="home"class="home">
         <div class="container">
             <h3>what to cook with your spare ingredients?</h3>
             <h1>List<span>-</span>my<span>-</span>Recipes</h1>
@@ -21,10 +21,13 @@
     </section>
     <section class="search">
         <div class="container">
+            <a href="#home">
+                <i id="go-home" class="fa fa-arrow-circle-left" aria-hidden="true"></i> 
+            </a>
             <div class="search-box">
                 <h3>what are your ingredients?</h2>
                 <form>
-                    <input id="ingredients" class="ingredients" type="text" value="ingredients, dish, keyword"><i id="plus" class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <input class="ingredients" type="text" placeholder="ingredients, dish, keyword"><i id="plus" class="fa fa-plus-circle" aria-hidden="true"></i>
                     <!--<input id="ingredients" class="ingredients" type="text" value="">-->
                     <div class="add-input"></div>
                     <input class="submit" type="submit" value="submit">
@@ -32,17 +35,31 @@
             </div>
         </div>
     </section>
-    <section class="recipe-lists">
+    <section id="recipe-lists" class="recipe-lists">
         <div class="top-banner">
+            <a href="#home">
+                <i id="go-search" class="fa fa-arrow-circle-left" aria-hidden="true"></i> 
+            </a>
             <h3>Results</h3>
             <p>are you ready to cook?</p>
         </div>
         <div class="container">
             <div class="results">
-
+                
             </div>
+            
         </div>
     </section>
+    <div id="myModal" class="modal">
+    <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <ul class="modal-list">
+                
+            </ul>
+            
+        </div>
+    </div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
