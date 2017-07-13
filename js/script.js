@@ -94,6 +94,8 @@ var ingredientsList = [];
     var span = $(".close");
 
     $(".results").on("click", ".imageModal", function(e){
+        $(".modal-list").empty();
+        $('.loader').show();
         var recipeId = $(this).parent().attr("data-id");   
             $.ajax({
                 url: "https://cors-anywhere.herokuapp.com/http://food2fork.com/api/get",
@@ -104,6 +106,7 @@ var ingredientsList = [];
                 },
             })
             .done(function(data){
+                $('.loader').fadeOut();
                 var allIngredients = data.recipe.ingredients;
                 // $('.modal-list').text("<p>" + allIngredients + "</p>");
                 organizeIngredients(allIngredients);
@@ -117,10 +120,13 @@ var ingredientsList = [];
             var item = ingredients[i];
             $(".modal-list").append('<li>' + item + '</li>');
         }
+
     }
 
     span.on("click", function(){
         modal.css({ 'display': "none" });
+
+        
         
     });
 
