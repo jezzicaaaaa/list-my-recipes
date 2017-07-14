@@ -1,10 +1,32 @@
 $title-font: 'Sacramento', cursive;
 $semi-title: 'Montserrat', sans-serif;
+$primary-color: #992820;
+$secondary-color: #7C201A;
 
 @mixin semi-title{        
     font-family: $semi-title;
     font-size: 20px;
     letter-spacing: 1px;
     text-transform: uppercase;
-
+}
+@mixin background{
+    background-size: cover;
+    background-position: top;
+    height: 100vh;
+}
+@mixin button{
+    border-radius: 5px; 
+    background: transparent;
+    border: 2px solid #eee;
+    width: 200px;
+    height: 70px;   
+    letter-spacing: 1px; 
+    font-family: $semi-title;
+    font-size: 28px;
+    color: white;
+    margin-top: 80px;
+}
+@mixin hover{
+    cursor: pointer;
+    transition: .3s ease-in-out;
 }

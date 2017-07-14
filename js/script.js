@@ -17,13 +17,13 @@ $(document).ready(function(){
             var item = recipeList[i];  
             //Make a template to append to results
             var template = `
-            <div class="item col-sm-6 col-lg-6 col-md-6" data-id='${item.recipe_id}'>
-                <img class="imageModal" src="${item.image_url}">
-                <h3>${item.title}</h3>
-            </div> 
+                <div class="item" col-sm-6 col-md-6 data-id='${item.recipe_id}'>
+                    <img class="imageModal" src="${item.image_url}">
+                    <h3>${item.title}</h3>
+                </div>
             `;            
             // console.log($('.item').data("id"));   
-            $('.results').append(template);
+            $('.row').append(template);
         }
     }
 
@@ -35,10 +35,13 @@ $(document).ready(function(){
         });
     }
 
-    function organizeIngredients(ingredients){
+    function organizeIngredients(ingredients, image){
+        $(".image").append('<img src="' + image + '">');
         for( i=0; i < ingredients.length; i++ ){
             var item = ingredients[i];
             $(".modal-list").append('<li>' + item + '</li>');
+
+           
         }
     }
 
@@ -95,9 +98,9 @@ $(document).ready(function(){
         .done(function(data){
             recipes = data.recipes;
             $('.loader').fadeOut(); 
-            $('.results').empty();
+            $('.row').empty();
             if( recipes.length == 0){
-                $('.results').append('results not found!');
+                $('.row').append('<p class ="no-result">results not found!</p>');
             }
             // console.log(recipes);
             listMyRecipe(recipes);
@@ -109,6 +112,7 @@ $(document).ready(function(){
 
     $(".results").on("click", ".imageModal", function(e){
         $(".modal-list").empty();
+        $('.image').empty();
         $('.loader').show();
         var recipeId = $(this).parent().attr("data-id");   
             $.ajax({
@@ -122,8 +126,9 @@ $(document).ready(function(){
             .done(function(data){
                 $('.loader').fadeOut();
                 var allIngredients = data.recipe.ingredients;
+                var image = data.recipe.image_url;
                 // $('.modal-list').text("<p>" + allIngredients + "</p>");
-                organizeIngredients(allIngredients);
+                organizeIngredients(allIngredients, image);
                 
             });
         modal.css({ 'display': "block" });
