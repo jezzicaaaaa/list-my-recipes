@@ -26,6 +26,17 @@ $secondary-color: #7C201A;
     color: white;
     margin-top: 80px;
 }
+@mixin button2{
+    background: $primary-color;
+    border: none;
+
+    letter-spacing: 1px; 
+    font-family: $semi-title;
+    font-size: 18px;
+    color: white;
+    display: block;
+    margin: auto;
+}
 @mixin hover{
     cursor: pointer;
     transition: .3s ease-in-out;
