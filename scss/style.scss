@@ -10,9 +10,7 @@
         text-align: center;
     }
     h1{
-        font-family: $title-font;
-        color: white;
-        font-size: 150px;
+        @include home-title;
         span{
             color: $primary-color;
         }
@@ -34,27 +32,18 @@
 }
 .search{
     background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../assets/search-bg2.jpg);
-    @include background;
+    @include background;    
     
     #go-home{
-        margin-top: 50px;
-        margin-left: 100px;
-        font-size: 50px;
-        color: white;
+        @include back-button;   
     }
     #go-home:hover{
         color: #cecece;
-        transition: .3s ease-in-out;
+        @include hover;
     }
 
     .search-box{
-        margin: 200px auto;
-        padding: 25px 15px;
-        text-align: center;
-        background: white;
-        color: black;
-        width: 700px;
-        position: relative;
+        @include search-box;
     
         h3{
             font-family: $title-font;
@@ -79,15 +68,15 @@
             border: 0;
         }
         input[type="text"]{
-            width: 250px;
-            height: 45px;
+            width: 270px;
+            height: 50px;
             font-family: $semi-title;
             padding: 0 5px;
-            font-size: 16px;
+            font-size: 20px;
         }
         i{
             color: white;
-            font-size: 25px;
+            font-size: 28px;
             display: inline-block;
         }
         i:hover{
@@ -96,8 +85,8 @@
         }
         .submit{ 
             @include button2;
-            width: 100px;
-            height: 40px;   
+            width: 120px;
+            height: 50px;   
             transition: .3s ease-in-out;
         }
         .submit:hover{
@@ -108,11 +97,8 @@
 .recipe-lists{
     background-image: url(../assets/wall4.png);
     #go-search{
+        @include back-button;
         position: absolute;
-        left:30px;
-        top: 50px;
-        font-size: 50px;
-        color: white;
     }
     #go-search:hover{
         color: #cecece;
@@ -144,7 +130,7 @@
     }
     .results{
         padding: 30px 0;
-        min-height: 75vh;
+        min-height: 81vh;
         text-align: center;
         display: flex;
         flex-wrap: wrap;
@@ -175,7 +161,7 @@
             font-size: 16px;
             line-height: 1.4;
             color: #fff;
-            padding: 0 5px;
+            padding: 0 8px;
             margin: auto;
         }
         .title-container:hover{
@@ -234,14 +220,19 @@
     .modal-list{
         margin-top: 20px;
         height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
     li{
         margin-right: 10px;
-        display: inline-block;
+        list-style: none;
         font-family: $semi-title;
         font-weight: 600;
         width: 45%;
         padding: 5px 10px;
+        font-size: 18px;
     }
     .image{
         margin-top: 20px;
@@ -282,4 +273,73 @@
 .see-more:hover{
     background-color: $secondary-color;
     @include hover;
+}
+
+@media #{$default}{
+.search{
+    .search-box{
+        h3{
+            font-size: 50px;
+        }
+        form{
+            width: 380px;
+            padding: 20px;
+            left: 12%;
+        }
+    }
+    .recipe-lists{
+        .top-banner{
+            h3{
+                font-size: 80px;
+            }
+        }
+
+    }
+    
+}
+
+}
+@media #{$medium}{
+.search{
+    .search-box{
+        form{
+            width: 340px;
+            margin-top: 15px;
+            left: 6%;
+        }
+        input[type="text"]{
+            font-size: 16px;
+            width: 220px;
+            height: 40px;
+        }
+    }
+    
+}
+.recipe-lists{
+    .top-banner{
+        height: 180px;
+            h3{
+                font-size: 80px;
+            }
+        }
+    .results{
+        flex-direction: column;
+        justify-content: space-around;
+        
+        .item{
+            width: 90%;
+            height: 250px;
+            text-align: center;
+            margin: 10px auto;
+        }
+    }
+}
+.modal{
+    .modal-content{
+        width: 80%;
+    }
+}
+.no-result{
+    font-size: 75px;
+}
 }

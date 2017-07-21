@@ -109,6 +109,7 @@ $(document).ready(function(){
             $('.results').empty();
             if( recipes.length == 0){
                 $('.results').append('<p class ="no-result">results not found! :(</p>');
+                $('.see-more').hide();
             }
             // console.log(recipes);
             listMyRecipe(recipes);

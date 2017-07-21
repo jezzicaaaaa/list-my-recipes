@@ -3,13 +3,23 @@ $semi-title: 'Montserrat', sans-serif;
 $primary-color: #992820;
 $secondary-color: #7C201A;
 
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(max-width: 1024px)";
+$default: "(max-width: 767px)";
+$medium: "(max-width: 680px)";
+$mobile: "(max-width: 480px)";
+
 @mixin semi-title{        
     font-family: $semi-title;
     font-size: 20px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    line-height: 1.4;
+    @media #{$desktop} {
+        padding: auto 10px;
+    }
 }
-@mixin background{
+@mixin background{  
     background-size: cover;
     background-position: top;
     height: 100vh;
@@ -25,14 +35,19 @@ $secondary-color: #7C201A;
     font-size: 28px;
     color: white;
     margin-top: 80px;
+
+    @media #{$medium} {
+        font-size: 23px;
+        width: 150px;
+        height: 70px;
+    }
 }
 @mixin button2{
     background: $primary-color;
     border: none;
-
     letter-spacing: 1px; 
     font-family: $semi-title;
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     display: block;
     margin: auto;
@@ -40,4 +55,48 @@ $secondary-color: #7C201A;
 @mixin hover{
     cursor: pointer;
     transition: .3s ease-in-out;
+}
+@mixin home-title{
+    font-family: $title-font;
+    color: white;
+    font-size: 150px;  
+
+    @media #{$desktop} {
+        font-size: 100px;
+    }
+    @media #{$medium} {
+        font-size: 70px;
+        line-height: 1.4;
+    }
+}
+@mixin back-button{
+    font-size: 50px;
+    color: white;
+    margin-top: 50px;
+    margin-left: 80px;
+
+    @media #{$default} {
+        font-size: 40px;
+        margin-left: 50px;
+    }
+}
+@mixin search-box{
+    margin: 200px auto;
+    padding: 25px 15px;
+    text-align: center;
+    background: white;
+    color: black;
+    width: 700px;
+    position: relative;
+
+    @media #{$default} {
+        width: 500px;
+        padding: 15px 8px;
+        margin: 100px auto;
+    }
+    @media #{$medium} {
+        width: 380px;
+        padding: 15px 8px;
+        margin: 100px auto;
+    }
 }
